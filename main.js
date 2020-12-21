@@ -1,16 +1,18 @@
+// Initilise the variables
 let win = 0;
 let lose = 0;
 let draw = 0;
 
 // Play a round of 3
 for (let i = 0; i < 3; i++) {
+    // prompt user and set default vaule to "Rock"
     let playerChoice = window.prompt("Chose Rock✊, Paper✋, or Scissors✌️?", "Rock");
     const playerSelection = playerChoice.toLowerCase(); // Convert choice to lower case
     const computerSelection = computerPlay();
-    // Checking Values
+    // Checking Values ...
     console.log(`The computer chose ${computerSelection} and you chose ${playerSelection}!`);
     console.log(playRound(playerSelection, computerSelection));
-    console.log(win, lose, draw);
+    console.log("Wins: " + win + "; Loses: " + lose + "; Draws: " + draw);
     
     function computerPlay() {
         let computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -44,3 +46,10 @@ for (let i = 0; i < 3; i++) {
         return `The computer chose ${computerSelection} and you chose ${playerSelection}! We have a draw!`;
     }
 };
+
+// Check the outcome of the For loop
+if (win > lose) {
+    console.log("YOU WIN!")
+} else if (lose > win) {
+        console.log("YOU LOSE!")
+    } else console.log("IT'S A DRAW")
