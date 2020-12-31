@@ -13,7 +13,7 @@ for (let i = 0; i < 3; i++) {
     console.log(`The computer chose ${computerSelection} and you chose ${playerSelection}!`);
     console.log(playRound(playerSelection, computerSelection));
     console.log("Wins: " + win + "; Loses: " + lose + "; Draws: " + draw);
-    
+
     function computerPlay() {
         let computerChoice = Math.floor(Math.random() * 3) + 1;
         if (computerChoice == 1) {
@@ -51,5 +51,5 @@ for (let i = 0; i < 3; i++) {
 if (win > lose) {
     console.log("YOU WIN!")
 } else if (lose > win) {
-        console.log("YOU LOSE!")
-    } else console.log("IT'S A DRAW")
+    console.log("YOU LOSE!")
+} else console.log("IT'S A DRAW")
