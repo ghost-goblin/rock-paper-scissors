@@ -1,13 +1,17 @@
 body {
     background-color: #f2f2f2;
+    text-align: center;
 }
 
 .container {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .selection {
-    display: inline-grid;
+    display: inline-block;
     padding: 3rem;
 }
 
