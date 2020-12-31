@@ -19,3 +19,7 @@ body {
     list-style-type: none;
     font-size: 3rem;
 }
+
+.emoji {
+    padding: 2rem 0;
+}
