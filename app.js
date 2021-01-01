@@ -43,6 +43,11 @@ buttons.forEach((button) => {
             return `The computer chose ${computerSelection} and you chose ${playerSelection}! We have a draw!`;
         };
 
+        // Scores
+        const paragraph = document.getElementById('score');
+        const wins = document.createTextNode(win);
+        paragraph.appendChild(wins);  
+
         // Check some values ...
         console.log(playRound(playerSelection, computerSelection));
         console.log("Wins: " + win + "; Loses: " + lose + "; Draws: " + draw);
