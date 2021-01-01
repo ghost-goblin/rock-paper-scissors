@@ -1,9 +1,13 @@
-// Button Event Listeners for Player Selection
+// Initilise the variables
+let win = 0;
+let lose = 0;
+let draw = 0;
+
+// Button Event Listeners for Player Selection 😀
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         let playerSelection = e.target.id;
-        console.log(playerSelection);
         const computerSelection = computerPlay();
 
         // 🖥️ The Computer Selection
@@ -38,8 +42,18 @@ buttons.forEach((button) => {
             } else draw += 1;
             return `The computer chose ${computerSelection} and you chose ${playerSelection}! We have a draw!`;
         };
-        // Check some values
-        console.log(`The computer chose ${computerSelection} and you chose ${playerSelection}!`);
+
+        // Check some values ...
         console.log(playRound(playerSelection, computerSelection));
+        console.log("Wins: " + win + "; Loses: " + lose + "; Draws: " + draw);
+
+        // Check the outcome
+        if (win > lose) {
+            console.log("YOU WIN!")
+        } else if (lose > win) {
+            console.log("YOU LOSE!")
+        } else if (draw > win || draw > lose) {
+            console.log("IT'S A DRAW!")
+        }
     });
 });
