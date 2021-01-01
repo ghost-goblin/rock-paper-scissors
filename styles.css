@@ -6,6 +6,18 @@ body {
     
 }
 
+h2 {
+    color: #dddddd;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.score-container {
+    background-color:  #222831;
+    padding: 2rem 0;
+    width: 400px;
+    margin: auto;
+}
+
 button {
     background-color: #4CAF50; /* Green */
     border: none;
