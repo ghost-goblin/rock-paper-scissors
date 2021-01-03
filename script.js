@@ -1,7 +1,9 @@
 // Initilise the variables
-let win = 0;
-let lose = 0;
-let draw = 0;
+let playerScore = 0;
+let computerScore = 0;
+
+const player = document.getElementById('player');
+const computer = document.getElementById('computer');
 
 // Button Event Listeners for Player Selection 😀
 const buttons = document.querySelectorAll('button');
@@ -22,43 +24,35 @@ buttons.forEach((button) => {
 
         function playRound(playerSelection, computerSelection) {
             if (computerSelection === "rock" && playerSelection === "paper") {
-                win += 1;
+                playerScore += 1;
+                player.innerHTML = playerScore;
                 return `You win! ${playerSelection} beats ${computerSelection}!`;
             } else if (computerSelection === "rock" && playerSelection === "scissors") {
-                lose += 1;
+                computerScore += 1;
+                computer.innerHTML = computerScore;
                 return `You lose! ${computerSelection} beats ${playerSelection}!`;
             } else if (computerSelection === "paper" && playerSelection === "scissors") {
-                win += 1;
+                playerScore += 1;
+                player.innerHTML = playerScore;
                 return `You win! ${playerSelection} beats ${computerSelection}!`;
             } else if (computerSelection === "paper" && playerSelection === "rock") {
-                lose += 1;
+                computerScore += 1;
+                computer.innerHTML = computerScore;
                 return `You lose! ${computerSelection} beats ${playerSelection}!`;
             } else if (computerSelection === "scissors" && playerSelection === "paper") {
-                lose += 1;
+                computerScore += 1;
+                computer.innerHTML = computerScore;
                 return `You lose! ${computerSelection} beats ${playerSelection}!`;
             } else if (computerSelection === "scissors" && playerSelection === "rock") {
-                win += 1;
+                playerScore += 1;
+                player.innerHTML = playerScore;
                 return `You win! ${playerSelection} beats ${computerSelection}!`;
-            } else draw += 1;
-            return `The computer chose ${computerSelection} and you chose ${playerSelection}! We have a draw!`;
+            } else return;
         };
 
-        // Scores
-        const paragraph = document.getElementById('score');
-        const wins = document.createTextNode(win);
-        paragraph.appendChild(wins);  
 
         // Check some values ...
-        console.log(playRound(playerSelection, computerSelection));
-        console.log("Wins: " + win + "; Loses: " + lose + "; Draws: " + draw);
-
-        // Check the outcome
-        if (win > lose) {
-            console.log("YOU WIN!")
-        } else if (lose > win) {
-            console.log("YOU LOSE!")
-        } else if (draw > win || draw > lose) {
-            console.log("IT'S A DRAW!")
-        }
+        playRound(playerSelection, computerSelection);
+        console.log("Player Score: " + playerScore + "; Computer Score: " + computerScore);
     });
 });
