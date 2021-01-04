@@ -4,6 +4,7 @@ let computerScore = 0;
 
 const player = document.getElementById('player');
 const computer = document.getElementById('computer');
+const score = document.getElementById('score');
 
 // Button Event Listeners for Player Selection 😀
 const buttons = document.querySelectorAll('button');
@@ -26,28 +27,28 @@ buttons.forEach((button) => {
             if (computerSelection === "rock" && playerSelection === "paper") {
                 playerScore += 1;
                 player.innerHTML = playerScore;
-                return `You win! ${playerSelection} beats ${computerSelection}!`;
+                score.innerHTML = `You win! ${playerSelection} beats ${computerSelection}!`;
             } else if (computerSelection === "rock" && playerSelection === "scissors") {
                 computerScore += 1;
                 computer.innerHTML = computerScore;
-                return `You lose! ${computerSelection} beats ${playerSelection}!`;
+                score.innerHTML = `You lose! ${computerSelection} beats ${playerSelection}!`;
             } else if (computerSelection === "paper" && playerSelection === "scissors") {
                 playerScore += 1;
                 player.innerHTML = playerScore;
-                return `You win! ${playerSelection} beats ${computerSelection}!`;
+                score.innerHTML = `You win! ${playerSelection} beats ${computerSelection}!`;
             } else if (computerSelection === "paper" && playerSelection === "rock") {
                 computerScore += 1;
                 computer.innerHTML = computerScore;
-                return `You lose! ${computerSelection} beats ${playerSelection}!`;
+                score.innerHTML = `You lose! ${computerSelection} beats ${playerSelection}!`;
             } else if (computerSelection === "scissors" && playerSelection === "paper") {
                 computerScore += 1;
                 computer.innerHTML = computerScore;
-                return `You lose! ${computerSelection} beats ${playerSelection}!`;
+                score.innerHTML = `You lose! ${computerSelection} beats ${playerSelection}!`;
             } else if (computerSelection === "scissors" && playerSelection === "rock") {
                 playerScore += 1;
                 player.innerHTML = playerScore;
-                return `You win! ${playerSelection} beats ${computerSelection}!`;
-            } else return;
+                score.innerHTML = `You win! ${playerSelection} beats ${computerSelection}!`;
+            } else score.innerHTML = "It's a draw!";
         };
 
 

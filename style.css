@@ -11,6 +11,11 @@ h2 {
     font-family: 'Courier New', Courier, monospace;
 }
 
+p {
+    color: #dddddd;
+
+}
+
 .score-container {
     background-color:  #222831;
     padding: 2rem 0;
