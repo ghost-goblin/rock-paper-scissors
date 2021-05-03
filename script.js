@@ -5,13 +5,31 @@ let computerScore = 0;
 const player = document.getElementById('player');
 const computer = document.getElementById('computer');
 const score = document.getElementById('score');
+const refresh = document.getElementById('refresh')
+let gameOver = false;
+
 
 // Button Event Listeners for Player Selection 😀
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
-    button.addEventListener('click', (e) => {
+    refresh.addEventListener('click', refreshGame);
+
+    function refreshGame(e) {
+        console.log('Refresh Game!');
+        playerScore = 0;
+        computerScore = 0;
+        computer.innerHTML = computerScore;
+        player.innerHTML = playerScore;
+        score.innerHTML = '';
+        gameOver = false;
+        button.addEventListener('click', playGame);
+    }
+
+    button.addEventListener('click', playGame);
+    function playGame(e) {
         let playerSelection = e.target.id;
         const computerSelection = computerPlay();
+
 
         // 🖥️ The Computer Selection
         function computerPlay() {
@@ -51,9 +69,18 @@ buttons.forEach((button) => {
             } else score.innerHTML = "It's a draw!";
         };
 
+        playRound(playerSelection, computerSelection);
 
         // Check some values ...
-        playRound(playerSelection, computerSelection);
         console.log("Player Score: " + playerScore + "; Computer Score: " + computerScore);
-    });
+        if ((playerScore + computerScore) === 5) {
+            gameOver = true;
+
+        };
+        if (gameOver) {
+            console.log('G A M E   O V E R !');
+            score.innerHTML = 'GAME OVER';
+            button.removeEventListener('click', playGame);
+        }
+    };
 });
